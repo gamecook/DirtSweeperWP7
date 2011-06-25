@@ -87,6 +87,7 @@
       <HintPath>packages\SilverlightToolkit-Core.4.2010.4\lib\sl4\System.Windows.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -111,6 +112,7 @@
     <Compile Include="DirtSweeper\Utils\AdControlUtil.cs" />
     <Compile Include="DirtSweeper\Utils\SoundUtil.cs" />
     <Compile Include="DirtSweeper\Utils\TweenUtil.cs" />
+    <Compile Include="MemoryDiagnosticsHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +138,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SplashScreenImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Assets\unlock_page_background.png" />
     <Resource Include="Assets\new_discovery_text.png" />
     <Resource Include="Assets\next_button_up.png" />
@@ -143,6 +148,15 @@
     <Resource Include="Assets\start_page_credits_up.png" />
     <Resource Include="Assets\start_page_sound_off_up.png" />
     <Resource Include="Assets\start_page_sound_on_up.png" />
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="images.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="Sounds\CrowdCheers.wav" />
     <Content Include="Sounds\DirtDigNoise.wav" />
     <Content Include="Sounds\DirtSweeperButtonPress.wav" />
@@ -225,7 +239,6 @@
     <Resource Include="Assets\start_page_logo.png" />
     <Resource Include="Assets\start_page_museum_up.png" />
     <Resource Include="Assets\start_page_new_dig_up.png" />
-    <Content Include="images.jpg" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

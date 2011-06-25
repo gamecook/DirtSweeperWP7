@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using System.Xml.Linq;
 using GameCook.DirtSweeper.State;
 using GameCook.DirtSweeper.Utils;
 using Microsoft.Phone.Controls;
@@ -22,6 +23,9 @@ namespace GameCook.DirtSweeper.Pages
         {
             base.OnNavigatedTo(e);
             gameState.SetActivePage("CreditsPage.xaml");
+
+            string Version = XDocument.Load("WMAppManifest.xml").Root.Element("App").Attribute("Version").Value;
+            versionNumber.Text = "Ver " + Version;
         }
 
     }

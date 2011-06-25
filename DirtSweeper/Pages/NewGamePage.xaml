@@ -44,7 +44,7 @@
         
         <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
             <StackPanel x:Name="dinoStackPanel" Orientation="Horizontal">
-                <Image x:Name="dino1" Stretch="None" VerticalAlignment="Bottom" Margin="250 0 256 0" Source="../../Assets/dinos/dino_1_hidden.png"/>
+                <Image x:Name="dino1" Stretch="None" VerticalAlignment="Bottom" Margin="180 0 256 0" Source="../../Assets/dinos/dino_1_hidden.png"/>
                 <Image x:Name="dino2" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_2_hidden.png"/>
                 <Image x:Name="dino3" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_3_hidden.png"/>
                 <Image x:Name="dino4" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_4_hidden.png"/>
@@ -59,16 +59,16 @@
             </StackPanel>
         </ScrollViewer>
         
-        <!--
-        <Image x:Name="exitButton" Stretch="None" MouseLeftButtonDown="exit_MouseLeftButtonDown" Source="../../Assets/exit_button_up.png" Margin="0 0 10 10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
--->
+        
+        <Image x:Name="continueGameButton" Visibility="Collapsed" Stretch="None" MouseLeftButtonDown="continueGame_MouseLeftButtonDown" Source="../../Assets/continue_button_up.png" Margin="0 0 10 10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+
         <StackPanel x:Name="difficultyButtons" Visibility="Collapsed" Margin="0 20 20 0" HorizontalAlignment="Right" VerticalAlignment="Top">
             <Image Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Right" Source="../../Assets/new_game_page_easy_up.png" MouseLeftButtonDown="easy_MouseLeftButtonDown"/>
             <Image Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Right" Source="../../Assets/new_game_page_medium_up.png" MouseLeftButtonDown="medium_MouseLeftButtonDown"/>
             <Image Stretch="None" HorizontalAlignment="Right" Source="../../Assets/new_game_page_hard_up.png" MouseLeftButtonDown="hard_MouseLeftButtonDown"/>
         </StackPanel>
         
-        <StackPanel Visibility="Visible" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <StackPanel Visibility="Collapsed" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center">
             <TextBlock TextAlignment="Center" FontSize="24" Foreground="Brown" Height="30" Name="elapsedTime" />
             <Button Content="C" FontSize="18" Click="clearBones_ButtonClick" />
             <Button Content="+5" FontSize="18" Click="incresaseBones_ButtonClick" />

@@ -54,21 +54,8 @@ namespace GameCook.DirtSweeper.Pages
             TweenUtil.AnimateInStageLeft(Logo, 1);
             TweenUtil.AnimateInStageBottom(Guy, .8);
             TweenUtil.AnimateInStageLeft(NewGameButton, 1.5);
-
-            double delayOffset = 1.8;
-
-            if (gameState.GetActiveGame())
-            {
-                TweenUtil.AnimateInStageLeft(ContinueButton, 1.8);
-                delayOffset += .3;
-            }
-            else
-            {
-                ContinueButton.Visibility = Visibility.Collapsed;
-            }
-
-            TweenUtil.AnimateInStageLeft(MuteButton, delayOffset);
-            TweenUtil.AnimateInStageLeft(CreditsButton, delayOffset+.3);
+            TweenUtil.AnimateInStageLeft(MuteButton, 1.8);
+            TweenUtil.AnimateInStageLeft(CreditsButton, 2);
 
             base.OnNavigatedTo(e);
             
@@ -80,11 +67,11 @@ namespace GameCook.DirtSweeper.Pages
             NavigationService.Navigate(new Uri("/DirtSweeper/Pages/NewGamePage.xaml", UriKind.Relative));
         }
 
-        private void continue_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        /*private void continue_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             SoundUtil.LoadSound("Sounds/DirtSweeperButtonPress.wav");
             NavigationService.Navigate(new Uri("/DirtSweeper/Pages/GamePage.xaml", UriKind.Relative));
-        }
+        }*/
 
         private void credits_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

@@ -88,6 +88,8 @@ namespace GameCook.DirtSweeper.Pages
             var totalBonesFound = gameState.GetTotalBones();
             var rewardsTotal = gameState.GetRewardTotal(level + 1);
 
+            
+
             //TODO harded number of dinos, need to fix that
             if (totalBonesFound >= rewardsTotal && level < 12)
             {
@@ -119,6 +121,17 @@ namespace GameCook.DirtSweeper.Pages
             TweenUtil.AnimateInStageRight(difficultyButtons, .8);
             difficultyButtons.Visibility = Visibility.Visible;
             SoundUtil.PlayBackgroundLoop("Sounds/DirtSweeperCinematic2.wav");
+
+            if (gameState.GetActiveGame())
+            {
+                continueGameButton.Visibility = Visibility.Visible;
+                TweenUtil.AnimateInStageRight(continueGameButton, 1.8);
+            }
+            else
+            {
+                continueGameButton.Visibility = Visibility.Collapsed;
+            }
+
         }
 
         private void UnlockDino(int level)
@@ -245,6 +258,12 @@ namespace GameCook.DirtSweeper.Pages
         private void continue_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             HideUnlockDino();
+        }
+
+        private void continueGame_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            SoundUtil.LoadSound("Sounds/DirtSweeperButtonPress.wav");
+            NavigationService.Navigate(new Uri("/DirtSweeper/Pages/GamePage.xaml", UriKind.Relative));
         }
     }
 }

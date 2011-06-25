@@ -116,7 +116,6 @@ namespace GameCook.DirtSweeper.Pages
             gameState.SetActivePage("GamePage.xaml");
 
             TweenUtil.AnimateInStageLeft(gameGuy, .3);
-            //TweenUtil.AnimateInStageBottom(exitButton, .6);
 
             SoundUtil.PlayBackgroundLoop("Sounds/HappyDigGuyTheme.wav");
 
@@ -219,7 +218,7 @@ namespace GameCook.DirtSweeper.Pages
                     minePanel.Children.Add(cover);
 
                     //For debug
-                    cover.Opacity = .3;
+                    cover.Opacity = 1;
 
                     covers.Add(cover);
 
@@ -478,13 +477,14 @@ namespace GameCook.DirtSweeper.Pages
             SoundUtil.LoadSound("Sounds/DirtSweeperButtonPress.wav");
             SaveGameState();
 
-            NavigationService.GoBack();// Navigate(new Uri(nextPageUri, UriKind.Relative));
+            NavigationService.GoBack();
         }
 
         private void restart_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
             SoundUtil.LoadSound("Sounds/DirtSweeperButtonPress.wav");
             hideOverlay();
+            gameState.UpdateTotalGames();
             InitByLevel(level);
         }
 
@@ -505,10 +505,10 @@ namespace GameCook.DirtSweeper.Pages
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            var soundMessage = MessageBox.Show("Are you sure you want to quit this game?", "Quit Game", MessageBoxButton.OKCancel);
+            var soundMessage = MessageBox.Show("Are you sure you want to leave this game?", "Leave Game", MessageBoxButton.OKCancel);
             if (soundMessage == MessageBoxResult.OK)
             {
-                gameState.ClearActiveGame();
+                //gameState.ClearActiveGame();
                 NavigationService.GoBack();
             }
             else

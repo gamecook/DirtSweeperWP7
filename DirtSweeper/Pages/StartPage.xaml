@@ -24,7 +24,6 @@
         <StackPanel Margin="20 20 0 00" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <Image x:Name="Logo" Margin="0 0 0 20" Stretch="None"  Source="../../Assets/start_Page_logo.png"/>
                 <Image x:Name="NewGameButton" Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Left" MouseLeftButtonDown="newGame_MouseLeftButtonDown" Source="../../Assets/start_page_new_dig_up.png"/>
-                <Image x:Name="ContinueButton" Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Left" MouseLeftButtonDown="continue_MouseLeftButtonDown" Source="../../Assets/start_page_continue_up.png"/>
                 <Image x:Name="MuteButton" Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Left" MouseLeftButtonDown="toggleMute_MouseLeftButtonDown" Source="../../Assets/start_page_sound_on_up.png"/>
                 <Image x:Name="CreditsButton" Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Left" MouseLeftButtonDown="credits_MouseLeftButtonDown" Source="../../Assets/start_page_credits_up.png"/>
         </StackPanel>

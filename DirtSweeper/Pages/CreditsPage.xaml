@@ -18,7 +18,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Image Stretch="None" Source="../../Assets/credits_page_background.png"/>
-        
+        <TextBlock x:Name="versionNumber" Margin="0 5 5 0" Text="Ver 1.0" TextAlignment="Right" FontFamily="../../Fonts/GROBOLD.ttf#GROBOLD" FontSize="14" Foreground="Black" />
+
         <!--<Image x:Name="exitButton" Stretch="None" MouseLeftButtonDown="exit_MouseLeftButtonDown" Source="../../Assets/exit_button_up.png" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Top"/>-->
     </Grid>
 </phone:PhoneApplicationPage>
