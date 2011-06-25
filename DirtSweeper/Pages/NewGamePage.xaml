@@ -1,0 +1,82 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="GameCook.DirtSweeper.Pages.NewGamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="800"
+    shell:SystemTray.IsVisible="False"
+    Style="{StaticResource TransitionPageStyle}">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Stretch="None" Source="../../Assets/new_game_page_background.png"/>
+
+        <Grid x:Name="statsBoard">
+            <Image x:Name="stats" Stretch="None" VerticalAlignment="Top" Margin="0 0 0 0" HorizontalAlignment="Left" Source="../../Assets/stats_board.png"/>
+            <StackPanel Width="188" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30 118 0 0">
+                <TextBlock x:Name="totalDigs" TextAlignment="Center" FontFamily="../../Fonts/GROBOLD.ttf#GROBOLD" Text="9,999,999" VerticalAlignment="Center" Margin="0 0 0 35"/>
+                <TextBlock x:Name="totalBones" TextAlignment="Center" FontFamily="../../Fonts/GROBOLD.ttf#GROBOLD" Text="9,999,999" VerticalAlignment="Center" Margin="0 0 0 35"/>
+                <TextBlock x:Name="discoveries" TextAlignment="Center" FontFamily="../../Fonts/GROBOLD.ttf#GROBOLD" Text="99/99" VerticalAlignment="Center" Margin="0 0 0 35"/>
+                <TextBlock x:Name="nextDiscovery" TextAlignment="Center" FontFamily="../../Fonts/GROBOLD.ttf#GROBOLD" Text="999/999 Bones" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="NewDiscovery" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Stretch="None" VerticalAlignment="Top" Source="../../Assets/unlock_page_background.png"/>
+            <Image x:Name="title" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="top" Margin="0 15 0 0" Source="../../Assets/new_discovery_text.png"/>
+            <Image x:Name="continueButton" Stretch="None" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 10 10" Source="../../Assets/next_button_up.png" MouseLeftButtonDown="continue_MouseLeftButtonDown"/>
+        </Grid>
+        
+        <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
+            <StackPanel x:Name="dinoStackPanel" Orientation="Horizontal">
+                <Image x:Name="dino1" Stretch="None" VerticalAlignment="Bottom" Margin="250 0 256 0" Source="../../Assets/dinos/dino_1_hidden.png"/>
+                <Image x:Name="dino2" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_2_hidden.png"/>
+                <Image x:Name="dino3" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_3_hidden.png"/>
+                <Image x:Name="dino4" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_4_hidden.png"/>
+                <Image x:Name="dino5" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_5_hidden.png"/>
+                <Image x:Name="dino6" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_6_hidden.png"/>
+                <Image x:Name="dino7" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_7_hidden.png"/>
+                <Image x:Name="dino8" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_8_hidden.png"/>
+                <Image x:Name="dino9" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_9_hidden.png"/>
+                <Image x:Name="dino10" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_10_hidden.png"/>
+                <Image x:Name="dino11" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_11_hidden.png"/>
+                <Image x:Name="dino12" Stretch="None" VerticalAlignment="Bottom" Margin="0 0 256 0" Source="../../Assets/dinos/dino_12_hidden.png"/>
+            </StackPanel>
+        </ScrollViewer>
+        
+        <!--
+        <Image x:Name="exitButton" Stretch="None" MouseLeftButtonDown="exit_MouseLeftButtonDown" Source="../../Assets/exit_button_up.png" Margin="0 0 10 10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+-->
+        <StackPanel x:Name="difficultyButtons" Visibility="Collapsed" Margin="0 20 20 0" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Image Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Right" Source="../../Assets/new_game_page_easy_up.png" MouseLeftButtonDown="easy_MouseLeftButtonDown"/>
+            <Image Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Right" Source="../../Assets/new_game_page_medium_up.png" MouseLeftButtonDown="medium_MouseLeftButtonDown"/>
+            <Image Stretch="None" HorizontalAlignment="Right" Source="../../Assets/new_game_page_hard_up.png" MouseLeftButtonDown="hard_MouseLeftButtonDown"/>
+        </StackPanel>
+        
+        <StackPanel Visibility="Visible" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBlock TextAlignment="Center" FontSize="24" Foreground="Brown" Height="30" Name="elapsedTime" />
+            <Button Content="C" FontSize="18" Click="clearBones_ButtonClick" />
+            <Button Content="+5" FontSize="18" Click="incresaseBones_ButtonClick" />
+            <Button Content="-5" FontSize="18" Click="decresaseBones_ButtonClick" />
+        </StackPanel>
+
+        
+    </Grid>
+ 
+    
+</phone:PhoneApplicationPage>

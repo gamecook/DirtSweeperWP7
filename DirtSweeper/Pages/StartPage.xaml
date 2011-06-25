@@ -1,0 +1,35 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="GameCook.DirtSweeper.Pages.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="800"
+    shell:SystemTray.IsVisible="False"
+    Style="{StaticResource TransitionPageStyle}">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Stretch="None" Source="../../Assets/start_page_background.png"/>
+        <Grid x:Name="DisplayGroup" >
+        <StackPanel Margin="20 20 0 00" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Image x:Name="Logo" Margin="0 0 0 20" Stretch="None"  Source="../../Assets/start_Page_logo.png"/>
+                <Image x:Name="NewGameButton" Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Left" MouseLeftButtonDown="newGame_MouseLeftButtonDown" Source="../../Assets/start_page_new_dig_up.png"/>
+                <Image x:Name="ContinueButton" Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Left" MouseLeftButtonDown="continue_MouseLeftButtonDown" Source="../../Assets/start_page_continue_up.png"/>
+                <Image x:Name="MuteButton" Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Left" MouseLeftButtonDown="toggleMute_MouseLeftButtonDown" Source="../../Assets/start_page_sound_on_up.png"/>
+                <Image x:Name="CreditsButton" Stretch="None" Margin="0 0 0 20" HorizontalAlignment="Left" MouseLeftButtonDown="credits_MouseLeftButtonDown" Source="../../Assets/start_page_credits_up.png"/>
+        </StackPanel>
+            <Image x:Name="Guy" Stretch="None" HorizontalAlignment="Right" Source="../../Assets/start_page_guy.png"/>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
