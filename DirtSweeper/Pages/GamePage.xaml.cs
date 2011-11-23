@@ -10,14 +10,11 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using GameCook.DirtSweeper.Core;
 using GameCook.DirtSweeper.State;
 using GameCook.DirtSweeper.Utils;
-using Microsoft.Advertising.Mobile.UI;
 using Microsoft.Phone.Controls;
-using System.Device.Location;
 using MineSweeper.DirtSweeper.Serialization;
 
 namespace GameCook.DirtSweeper.Pages
@@ -40,31 +37,11 @@ namespace GameCook.DirtSweeper.Pages
         private List<Image> covers;
         private Game game;
         private int secs;
-        private GeoCoordinateWatcher gcw = null;
-        private AdControl adControl;
-        // Constructor
-
         private int level;
 
         public MainPage()
         {
             InitializeComponent();
-
-            adControl = AdControlUtil.CreateNewAd();
-            adControl.HorizontalAlignment = HorizontalAlignment.Right;
-            adControl.VerticalAlignment = VerticalAlignment.Top;
-            adControl.Margin = new Thickness(0,0,0,0);
-            LayoutRoot.Children.Add(adControl);
-
-            this.gcw = new GeoCoordinateWatcher();
-            this.gcw.Start();
-            this.gcw.PositionChanged += new EventHandler<GeoPositionChangedEventArgs<GeoCoordinate>>(gcw_PositionChanged);
-        }
-
-        void gcw_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
-        {
-            this.gcw.Stop();
-            adControl.Location = new Location(e.Position.Location.Latitude, e.Position.Location.Longitude);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

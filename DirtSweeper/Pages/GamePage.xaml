@@ -35,7 +35,7 @@
 <!--        <Image x:Name="exitButton" Grid.ColumnSpan="2" Stretch="None" MouseLeftButtonDown="exit_MouseLeftButtonDown" Source="../../Assets/exit_button_up.png" Margin="0 0 10 10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>-->
 
         <Grid x:Name="minePanelWrapper" DataContext="{Binding}">
-            <Canvas x:Name="minePanel" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="75 75 0 0" Background="Transparent" />
+            <Canvas x:Name="minePanel" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="75 0 0 0" Background="Transparent" />
         </Grid>
         
         <!-- Pause/Game Win & Lose screen-->
