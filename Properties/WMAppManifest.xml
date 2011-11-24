@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
-<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.0">
-  <App xmlns="" ProductID="{112f6311-036c-4327-8b9d-b8bcf77c4a76}" Title="DirtSweeper" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.games"  Author="Jesse Freeman" Description="A new take on Minesweeper." Publisher="Game Cook, Inc.">
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{112f6311-036c-4327-8b9d-b8bcf77c4a76}" Title="DirtSweeper" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.games" Author="Jesse Freeman" Description="A new take on Minesweeper." Publisher="Game Cook, Inc.">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
-      <Capability Name="ID_CAP_IDENTITY_DEVICE"/>
-      <Capability Name="ID_CAP_LOCATION"/>
-      <Capability Name="ID_CAP_MEDIALIB"/>
-      <Capability Name="ID_CAP_NETWORKING"/>
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+      <Capability Name="ID_CAP_LOCATION" />
+      <Capability Name="ID_CAP_MEDIALIB" />
+      <Capability Name="ID_CAP_NETWORKING" />
     </Capabilities>
     <Tasks>
-      <DefaultTask  Name ="_default" NavigationPage="/DirtSweeper/Pages/StartPage.xaml"/>
+      <DefaultTask Name="_default" NavigationPage="/DirtSweeper/Pages/StartPage.xaml" />
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="DirtSweeperToken" TaskName="_default">
